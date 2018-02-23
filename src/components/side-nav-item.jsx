@@ -7,7 +7,10 @@ export class SideNavItem extends Component {
   }
 
   static defaultProps = {
-    item: {}
+    item: {
+      text: '',
+      url: ''
+    }
   }
 
   render() {
@@ -15,6 +18,8 @@ export class SideNavItem extends Component {
       text,
       url
     } = this.props.item;
-    return <div>{ text }: { url }</div>;
+    return <li><a href={ url }>{ text } </a></li>;
   }
 }
+
+export default SideNavItem;

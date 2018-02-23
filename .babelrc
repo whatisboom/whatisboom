@@ -1,7 +1,10 @@
 {
   "plugins": [
     "transform-runtime",
-    "transform-class-properties"
+    "transform-class-properties",
+    ["module-resolver", {
+      "root": ["./src"]
+    }]
   ],
   "presets": [
     "env",

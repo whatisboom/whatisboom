@@ -1,0 +1,9 @@
+.side-nav {
+  width: 40px;
+  overflow: hidden;
+
+  > ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}

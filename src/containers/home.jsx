@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {
   Heading,
   SideNav
-} from '../components';
+} from 'components';
 
 export default class Home extends Component {
 

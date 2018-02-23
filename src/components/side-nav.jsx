@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import {
   SideNavItem
-} from './side-nav-item';
+} from 'components';
 
 export class SideNav extends Component {
 
