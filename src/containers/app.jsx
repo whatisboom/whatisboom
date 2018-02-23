@@ -20,7 +20,7 @@ export class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
+        <div className="page-wrapper">
           <SideNav />
           <Route exact path="/" component={Home} />
           <Route path="/blog" component={Blog} />

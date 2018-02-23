@@ -94,23 +94,23 @@ describe('<SideNav /> Component', () => {
     });
   });
 
-  describe('handleMouseExit', () => {
+  describe('handleMouseLeave', () => {
     it('should be defined', () => {
-      expect(sidenav.instance().handleMouseExit).toBeDefined();
+      expect(sidenav.instance().handleMouseLeave).toBeDefined();
     });
     it('should clear mouseOverTimer property', () => {
       const cmp = sidenav.instance();
       expect(cmp.mouseOverTimer).toBeUndefined();
       cmp.handleMouseEnter();
       expect(cmp.mouseOverTimer).toBeDefined();
-      cmp.handleMouseExit();
+      cmp.handleMouseLeave();
       expect(cmp.mouseOverTimer).toBeUndefined();
     });
     it('should call toggleExpanded', () => {
       const cmp = sidenav.instance();
       const spy = jest.spyOn(cmp, 'toggleExpanded');
       cmp.state.expanded = true;
-      cmp.handleMouseExit();
+      cmp.handleMouseLeave();
       expect(spy).toHaveBeenCalled();
     });
   });

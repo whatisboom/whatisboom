@@ -32,6 +32,7 @@ export class SideNav extends Component {
       <nav
         className={this.getClassName()}
         onMouseEnter={this.handleMouseEnter.bind(this)}
+        onMouseLeave={this.handleMouseLeave.bind(this)}
       >
         <ul>{navItems}</ul>
       </nav>
@@ -52,7 +53,7 @@ export class SideNav extends Component {
     this.mouseOverTimer = setTimeout(this.toggleExpanded.bind(this), this.expandTimeout);
   }
 
-  handleMouseExit() {
+  handleMouseLeave() {
     if (this.state.expanded) {
       this.toggleExpanded();
     }
