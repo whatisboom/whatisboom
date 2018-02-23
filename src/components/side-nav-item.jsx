@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export class SideNavItem extends Component {
@@ -18,7 +19,7 @@ export class SideNavItem extends Component {
       text,
       url
     } = this.props.item;
-    return <li><a href={ url }>{ text } </a></li>;
+    return <li><Link to={ url }>{ text }</Link></li>;
   }
 }
 

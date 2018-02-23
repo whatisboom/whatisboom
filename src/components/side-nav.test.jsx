@@ -1,12 +1,14 @@
 import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 import { SideNav, mapStateToProps } from './side-nav';
 import { SideNavItem } from './side-nav-item';
 
-let sidenav;
+let sidenav, withRouter;
 
 beforeEach(() => {
-  sidenav = mount(<SideNav />);
+  withRouter = mount(<MemoryRouter><SideNav /></MemoryRouter>);
+  sidenav = withRouter.find(SideNav);
 });
 
 describe('<SideNav /> Component', () => {
