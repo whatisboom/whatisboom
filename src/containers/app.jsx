@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import {
-  BrowserRouter as Router,
   Route
 } from 'react-router-dom';
 
 import store from 'store';
 
-import { Home } from 'containers';
+import {
+  Blog,
+  Home
+} from 'containers';
+
+import {
+  SideNav
+} from 'components';
 
 export class App extends Component {
 
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <div>
+          <SideNav />
           <Route exact path="/" component={Home} />
-        </Router>
+          <Route path="/blog" component={Blog} />
+        </div>
       </Provider>
     );
   }

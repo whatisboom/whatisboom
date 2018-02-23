@@ -54,6 +54,19 @@ describe('<SideNav /> Component', () => {
     });
   });
 
+  describe('setExpanded', () => {
+    it('should be defined', () => {
+      expect(sidenav.instance().setExpanded).toBeDefined();
+    });
+
+    it('should execute callback', () => {
+      const callback = jest.fn();
+      const cmp = sidenav.instance();
+      cmp.setExpanded(true, callback);
+      expect(callback).toHaveBeenCalled();
+    });
+  });
+
   describe('toggleExpanded', () => {
     it('should be defined', () => {
       expect(sidenav.instance().toggleExpanded).toBeDefined();
@@ -96,6 +109,7 @@ describe('<SideNav /> Component', () => {
     it('should call toggleExpanded', () => {
       const cmp = sidenav.instance();
       const spy = jest.spyOn(cmp, 'toggleExpanded');
+      cmp.state.expanded = true;
       cmp.handleMouseExit();
       expect(spy).toHaveBeenCalled();
     });

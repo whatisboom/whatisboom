@@ -53,17 +53,21 @@ export class SideNav extends Component {
   }
 
   handleMouseExit() {
-    this.toggleExpanded();
+    if (this.state.expanded) {
+      this.toggleExpanded();
+    }
     clearTimeout(this.mouseOverTimer);
     delete this.mouseOverTimer;
   }
 
+  setExpanded(expanded, cb = () => {}) {
+    this.setState(() => ({
+      expanded
+    }), cb);
+  }
+
   toggleExpanded() {
-    this.setState((prevState) => {
-      return {
-        expanded: !prevState.expanded
-      }
-    });
+    this.setExpanded(!this.state.expanded)
   }
 
 }

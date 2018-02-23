@@ -4,14 +4,16 @@ import {
   Heading
 } from 'components';
 
-export default class Home extends Component {
+export class Blog extends Component {
 
   render() {
     return (
-      <div className="home">
-        <Heading>Test</Heading>
+      <div className="blog">
+        <Heading>Blog</Heading>
       </div>
     );
   }
-
 }
+
+
+export default Blog;

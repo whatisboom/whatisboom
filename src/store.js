@@ -12,8 +12,8 @@ export const initialState = {
       text: 'Home',
       url: '/'
     }, {
-      text: 'GitHub',
-      url: 'https://github.com/whatisboom'
+      text: 'Blog',
+      url: '/blog'
     }
   ]
 };

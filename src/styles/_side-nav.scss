@@ -2,6 +2,10 @@
   width: 40px;
   overflow: hidden;
 
+  &.expanded {
+    width: auto;
+  }
+
   > ul {
     list-style-type: none;
     padding: 0;
