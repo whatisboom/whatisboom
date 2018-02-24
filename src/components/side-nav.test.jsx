@@ -65,6 +65,24 @@ describe('<SideNav /> Component', () => {
       cmp.setExpanded(true, callback);
       expect(callback).toHaveBeenCalled();
     });
+
+    it('should execute the callback if expanded is not the same as state', () => {
+      const callback = jest.fn();
+      const cmp = sidenav.instance();
+      cmp.state.expanded = false;
+      cmp.setExpanded(true, callback);
+      expect(callback).toHaveBeenCalledTimes(1);
+      cmp.setExpanded(false, callback);
+      expect(callback).toHaveBeenCalledTimes(2);
+    });
+
+    it('should not execute the callback if expanded is same as state', () => {
+      const callback = jest.fn();
+      const cmp = sidenav.instance();
+      cmp.state.expanded = true;
+      cmp.setExpanded(true, callback);
+      expect(callback).toHaveBeenCalledTimes(0);
+    });
   });
 
   describe('toggleExpanded', () => {

@@ -62,9 +62,11 @@ export class SideNav extends Component {
   }
 
   setExpanded(expanded, cb = () => {}) {
-    this.setState(() => ({
-      expanded
-    }), cb);
+    if (this.state.expanded !== expanded) {
+      this.setState({
+        expanded
+      }, cb);
+    }
   }
 
   toggleExpanded() {

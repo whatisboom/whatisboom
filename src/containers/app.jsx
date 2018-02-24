@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import {
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import store from 'store';
@@ -22,8 +23,10 @@ export class App extends Component {
       <Provider store={store}>
         <div className="page-wrapper">
           <SideNav />
-          <Route exact path="/" component={Home} />
-          <Route path="/blog" component={Blog} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/blog" component={Blog} />
+          </Switch>
         </div>
       </Provider>
     );
